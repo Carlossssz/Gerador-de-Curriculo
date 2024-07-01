@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Currículo</title>
+    <link rel="stylesheet" href="css/styleInformacoes.css"/>
+    <link rel="stylesheet" href="css/styleResultado.css">
+    
+</head>
+<body>
+
+    <main>  
+        <form action="curriculo.php" method="POST" enctype="multipart/form-data">
+            <div class="first">
+                <h1>Gerador de Curriculo - Dados Pessoais</h1>
+                
+                <div class="top">
+                    <div class="imageCamp">
+                        <button id="foto">Escolher Imagem<input type="button" id="lixao"></button>
+                        <input type="file" id="fileSelector" name="fileSelector" accept="image/*">
+                       <!-- <input type="button" id="apagar" value="Excluir Imagem"> -->
+                        
+                    </div>
+
+                    <div class="topName">
+                        <p>Inclua seu nome completo e seu endereço de e-mail para que os empregadores entrem em contato com você. Outros campos são opcionais.</p>
+                        <div class="info">
+                            <div class="nome inputBox">
+                                <input type="text" name="nome" id="nome" placeholder="Ex: Alex" required>
+                                <label for="nome">Nome</label>
+                            </div>  <!-- Nome -->
+                            <div class="sobrenome inputBox">
+                                <input type="text" name="sobrenome" id="sobrenome" placeholder="Ex: Monteiro" required>
+                                <label for="sobrenome">Sobrenome</label>
+                            </div>  <!-- Sobrenome -->
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="infoBottom">
+                        <div class="endereco inputBoxUmaLinha">
+                            <input type="text" id="endereco" name="endereco" placeholder="Ex: Maringá, Av. Brasil, 473" autocomplete="street-address" data-input="currEnd" required>
+                            <label for="endereco">Endereço</label>
+                        </div> <!-- Endereço -->
+
+                        
+                        <div class="bottomBot">
+                            <div class="areaDeInput">
+                                <div class="tell inputBox">
+                                    <input type="tel" id="tell" name="tell" placeholder="(XX)xxxxx-xxxx" data-input="currTell" required>
+                                    <label for="tell">Número de telefone</label>
+                                </div>  <!-- Telefone -->
+
+                                <div class="email inputBox">
+                                    <input type="email" id="email" name="email" placeholder="alexmonteiro@email.com" data-input="currEmail" required>
+                                    <label for="endereco">Endereço de e-mail</label>
+                                </div> <!-- Email -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mais">
+                        <label class="switch">
+                            <input type="checkbox" id="checkboxMais">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Acrescentar detalhes adicionais</p>
+                    </div> <!-- Botão para Expandir -->
+
+                    <div id="adicional" class="bottomBot">
+                        <!--Aqui que vem os campos do javacript-->
+                    </div>
+
+                    <div id="enviar">
+                        <input type="submit" value="Confirmar">
+                    </div>
+                </div>
+            </div>
+
+            <!--inputs hidden-->
+            <div id="novasExp" class="inv">
+
+            </div>
+            <div id="novasFormacoes" class="inv">
+                
+            </div>
+            
+        </form>
+    </main> 
+    <div class="result">
+        <div class="curriculo">
+            <header>
+                <h1 id="curriculoNome"></h1>
+                <span id="linha"></span>
+            </header>
+
+            <div id="curriculoFoto"></div>
+
+            <div class="parteMenor">
+                <div class="curriculoInfoPessoal">
+                    <h4>CONTATO</h4>
+                    <ul>
+                        <li id="currEnd" class="permanente"></li>
+                        <li id="currTell" class="permanente"></li>
+                        <li id="currEmail" class="permanente"></li>
+                        <li id="currNasc" class="extra"></li>
+                        <li id="currNatur" class="extra"></li>
+                        <li id="currEstadoC" class="extra"></li>
+                        <li id="currPort" class="extra"></li>
+                    </ul>
+                </div>
+                <div id="habilidades" class="campoExtra">
+                    <h4>Habilidades e competências</h4>
+                    <div class="habilitLista">
+                        <ul id="habilidadesUl">
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="currIdiomas" class="campoExtra">
+                    <h4>Idiomas</h4>
+                    <div class="idiomaLista">
+                        <ul id="idiomasUl">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="curriculoCorpo" >
+                <div id="currResumo" class="campoExtra">
+                    <h4>Resumo</h4>
+                    <p id="currResumoText"></p>
+                </div>
+
+                <div id="currExpContainer" class="campoExtra">
+                    <h4>Experiência Profissional</h4>
+                    <div id="expCurriculo" class="ajustes">
+
+                    </div>
+                </div>
+
+                <div id="currFormacao" class="campoExtra">
+                    <h4>Formação Acadêmica</h4>
+                    <div id="formacaoCurriculo" class="ajustes">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

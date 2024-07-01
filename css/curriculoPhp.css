@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.result {
+    height: 100%;
+    aspect-ratio: 210/297;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.curriculo{
+    height: 100%;
+    width: 100%;  /* Para manter a proporção de uma fola A4*/
+    background-color: aliceblue;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    background-color: #2a5978;
+    color: white;
+    height: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+header h1{
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    position: absolute;
+    left: 35%;
+}
+
+#linha{
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 4%;
+}
+
+#curriculoCorpo{
+    background-color: white;
+    width: 65%;
+    height: 86.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 2% 4%;
+}
+#curriculoCorpo p{
+    font-size: 15px;
+}
+
+#curriculoFoto{
+    width: 23%;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    position: absolute;
+    left: 6.5%;
+    top: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.342);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.parteMenor{
+    width: 35%;
+    height: 70%;
+    position: relative;
+    top: 13%;
+}
+
+h4{
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.curriculoInfoPessoal{
+    width: 91%;
+    height: auto;
+    padding: 3% 10%;
+    /*display: none;*/
+}
+.curriculoInfoPessoal ul{
+    position: relative;
+    left: 16%;
+    list-style: none;
+}
+.curriculoInfoPessoal li{
+    position: relative;
+    margin-bottom: 3%;
+    font-size: 13px;
+    width: 80%;
+    /*display: none;*/
+    text-align: justify;
+}
+
+.curriculoInfoPessoal li::before{
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    width: 18px; /* Largura do marcador */
+    height: 18px; /* Altura do marcador */
+    background-size: cover; /* Ajusta o tamanho da imagem */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#currEnd::before{
+    background-image: url("../images/home.png");
+}
+#currTell::before{
+    background-image: url("../images/tell.png");
+}
+
+
+#currEmail::before{
+    background-image: url("../images/email.png");
+}
+#currNasc::before{
+    background-image: url("../images/aniversario.png");
+}
+#currNatur::before{
+    background-image: url("../images/naturalidade.png");
+}
+#currEstadoC::before{
+    background-image: url("../images/estadoCivil.png");
+}
+
+
+#currPort::before{
+    background-image: url("../images/link.png");
+}
+
+@media (max-width: 965px){ 
+    .curriculo{     /*Mudar adireção da proporção do curriculo*/
+        width: 90%;  
+        height: auto;  /*Reseta o valor de Height para que o aspect-ratio use o width como base*/
+        aspect-ratio: 210/297;
+    }
+}
+
+#currResumo, #currExpContainer, #currFormacao{
+    /*display: none;*/
+    margin-bottom: 10%;
+}
+.ajustes{
+    width: 100%;
+    padding: 0 5%;
+}
+
+.campoExtra{
+    margin-top: 10%;
+    padding: 0px 10%;
+}
+.campoExtra ul{
+    padding: 0px 15%;
+}
+
+#imprimir{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+    position: relative;
+    left: 10px;
+    transition: 0.2s;
+}
+
+#imprimir:hover{
+    background-color: #2a5978;
+    color: white;
+    transform: scale(1.2)
+}
+#imprimir:active{
+    transform: scale(1);
+    box-shadow: none;
+}
+
+@media print{
+    #imprimir{
+        display: none;
+    }
+}
